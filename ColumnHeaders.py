@@ -1,0 +1,30 @@
+
+"""
+NOTE: THE ORDER OF THE STRINGS IN THESE HEADER FILES MUTCH MATCH THE ORDER OF YOUR COLUMNS 
+IN THE DATA BASE. IF NOT THE DATA IN THE DATABASE WILL NOT BE CONSISTENT WITH
+THE COLUMN HEADERS MAKING THE DATA BASE BASCIALLY USELESS. DO NOT IGNORE THIS
+MESSAGE.
+"""
+import re
+
+MoHead = ['96Mo','92Mo/95Mo','94Mo/95Mo','96Mo/95Mo','97Mo/95Mo','98Mo/95Mo','100Mo/95Mo','91Zr/95Mo']
+BHead = ['11B', '11B/10B']
+CuHead = ['63Cu','65Cu','65Cu/63Cu','62Ni/60Ni','61Ni/60Ni']
+UHead = ['234U','235U', '238U','234U/238U','235U/238U']
+FeHead = ['/57Fe', '57Fe/54Fe','58Fe/54Fe','/54Fe']
+SrHead = ['87Sr', '87Sr/86Sr','84Sr/86Sr', '85Rb/86Sr']
+SHead = ['32S','34S', '34S/32S']
+ZnHead = ['66Zn','68Zn/66Zn','70Zn/64Zn','68Zn/64Zn','67Zn/64Zn','66Zn/64Zn','67Zn/68Zn']
+
+ZrHead = ['NOENTRY']
+
+# '\d+\.\d+/57Fe' matches a float follwed by /57Fe
+
+'''
+BEFORE ADDING YOUR OWN EXPRESSIONS TEST THEM IN THE PROVIDED REGTEXT .py FILE
+SO THAT YOU KNOW THEY CAPTURE THE STRING YOU WANT.
+'''
+
+Exceptions = {'/57Fe':'\d+\.\d+/57Fe', '/54Fe':'\d+\.\d+/54Fe'}
+
+Headers = {'Mo':MoHead, 'B':BHead, 'Zr':ZrHead,'Cu':CuHead,'U':UHead, 'Fe':FeHead,'Sr':SrHead, 'S':SHead,'Zn':ZnHead}
